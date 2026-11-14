@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "dev": "npm --workspace @b34st/web run dev",
-    "build": "npm --workspace @b34st/web run build",
+    "build": "npm --workspace @b34st/web run build && node -e \"require('fs').cpSync('apps/web/dist','dist',{recursive:true,force:true})\"",
     "lint": "npm --workspace @b34st/web run lint",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
