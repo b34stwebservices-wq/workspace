@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.env
+.env.local
+service-account*.json
+account_service_key.json
+*-service-account*.json
+*.pem
+coverage/
+firestore-debug.log
+.vercel
+.env*

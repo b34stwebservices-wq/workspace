@@ -1,0 +1,41 @@
+{
+  "name": "b34st-staff-app",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=20 <23"
+  },
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm --workspace @b34st/web run dev",
+    "build": "npm --workspace @b34st/web run build",
+    "lint": "npm --workspace @b34st/web run lint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "npm --workspace @b34st/web run typecheck && tsc --noEmit -p scripts/tsconfig.json && tsc --noEmit -p api/tsconfig.json",
+    "test": "npm --workspace @b34st/web run test",
+    "test:all": "npm run lint && npm run typecheck && npm run test",
+    "bootstrap-admin": "tsx scripts/bootstrap-admin.ts",
+    "create-user": "tsx scripts/create-user.ts",
+    "disable-user": "tsx scripts/disable-user.ts",
+    "enable-user": "tsx scripts/enable-user.ts",
+    "seed": "tsx scripts/seed-data.ts"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.2",
+    "@types/nodemailer": "^6.4.17",
+    "@vercel/node": "^5.0.2",
+    "firebase-tools": "13.29.2",
+    "prettier": "3.4.2",
+    "tsx": "4.19.2",
+    "typescript": "5.7.2",
+    "vitest": "2.1.8"
+  },
+  "dependencies": {
+    "firebase-admin": "13.0.1",
+    "nodemailer": "^6.9.16",
+    "pdf-lib": "^1.17.1"
+  }
+}
