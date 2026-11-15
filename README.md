@@ -84,3 +84,4 @@ See `PHASE_8_UPDATE.md` for the reporting, role-scoped in-app attention centre, 
 
 Recording an invoice payment can email a PDF receipt to the client from the company mailbox. The browser calls `POST /api/send-receipt` (a Vercel function); the function verifies the Firebase ID token, requires an active `admin` or `bizops` role, reads the payment, invoice and **client email from Firestore** (the recipient is never taken from the request), builds the PDF, sends it over SMTP, and records the outcome in `receipts/{paymentId}`. Receipt numbers (`RCT-000001`…) are allocated server-side in a transaction. Set the server-only variables listed in `.env.example` in Vercel (Production and Preview), deploy `firebase/firestore.rules`, and use `vercel dev` (not `npm run dev`) to test the endpoint locally.
 # workspace
+# workspace
